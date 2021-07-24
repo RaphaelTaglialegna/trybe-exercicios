@@ -1,0 +1,24 @@
+div{
+    width: 500px;
+   background-color: aqua; 
+   
+
+}
+
+p, h1{
+    text-align: center;
+}
+
+li:hover{
+    background-color: blueviolet;
+}
+
+li:active{
+color:aliceblue;
+}
+.colun{
+    width:fit-content
+}
+li{
+    list-style: none;
+}
