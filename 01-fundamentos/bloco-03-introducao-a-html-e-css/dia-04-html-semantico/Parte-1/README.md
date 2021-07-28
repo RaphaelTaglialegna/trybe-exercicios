@@ -1,21 +1,81 @@
-##Exercícios HTML e CSS - Estrutura de Página
-####Construindo seu primeiro Portfólio Web!
+####  Exercícios de Fixação
 
-Antes de começar, tenha em mente que, por estar utilizando o GitHub Pages, a maneira como você versionará seu código do exercício de hoje (e dos próximos dois dias) é um pouco diferente da forma como o realizará no decorrer do curso. Para os exercícios relacionados ao seu Portfólio Web, você não utilizará seu diretório trybe-exercicios .
+Para realizar o exercício, leia atentamente o enunciado. Após entender o que foi pedido, desenvolva a solução e então verifique se você conseguiu cumprir com o que foi solicitado.
 
-Você deve seguir as instruções a seguir e fazer o setup para o exercício de hoje:
-1. Crie um novo diretório onde você vai desenvolver o seu portfólio. É importante que ele seja criado fora do seu diretório de exercícios , pois a sua manutenção daqui em diante será feita em outro ambiente;
-2. Inicie um novo repositório local com Git no diretório que você criou na etapa 1;
-3. Crie um arquivo index.html ;
-4. Para executar o seu código enquanto o desenvolve, utilize a extensão Live Server . Para saber mais sobre ela acesse nosso conteúdo sobre isso.
+1 - Para realizar este exercício copie o código HTML abaixo. Em seguida, faça a implementação das propriedades CSS e, se necessário, faça adições à estrutura HTML existente, para que o resultado final seja similar à imagem referência.
 
-####Requisitos
-* Seu Portfólio Web deve ter as seguintes informações:
-* Seu nome completo;
-* Uma foto atual sua, acompanhada de um texto alternativo, que deve ser a descrição da foto que você está usando;
-* Uma breve descrição sobre você, destacando algumas informações como nacionalidade e a cidade/estado onde mora;
-* Uma lista de habilidades que você possui, com destaque para aquela de que você mais se orgulha;
-* Um link interno para a sua foto;
-* Um link externo para algum blog de que você goste, que abra em uma nova aba;
-* Partes do seu portfólio destacadas com negrito e/ou itálico;
- Um índice com links internos para as diferentes seções do seu portfólio.
+Lembre-se que a estrutura da página deve ser mantida para que a semântica do código seja preservada.
+
+```
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      .first {
+        background-color: rgb(235, 200, 84);
+        font-size: 20px;
+        height: 50px;
+        text-align: center;
+        width: 200px;
+      }
+
+      .second {
+        background-color: rgb(219, 219, 219);
+        font-size: 20px;
+        height: 50px;
+        text-align: center;
+        width: 300px;
+      }
+
+      .third {
+        background-color: rgb(170, 142, 106);
+        font-size: 20px;
+        height: 50px;
+        text-align: center;
+        width: 300px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hackathon Results</h1>
+    </header>
+    <section>
+      <ul>
+        <li class="first">1º - Equipe 1</li>
+        <li class="second">2º - Equipe 2</li>
+        <li class="third">3º - Equipe 3</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Premiação Primeiro Lugar:</h3>
+      <ul>
+        <li>| R$ 1000,00 por integrante da equipe |</li>
+        <li>| Bootcamp de 2 meses com possibilidade de contratação |</li>
+      </ul>
+      <h3>Premiação Segundo Lugar:</h3>
+      <ul>
+        <li>| R$ 600,00 por integrante da equipe |</li>
+        <li>| Participação no processo seletivo para o Bootcamp |</li>
+      </ul>
+      <h3>Premiação Terceiro Lugar:</h3>
+      <ul>
+        <li>| R$ 300,00 por integrante da equipe |</li>
+        <li>| Participação no processo seletivo para o Bootcamp |</li>
+      </ul>
+    </section>
+  </body>
+</html>
+
+```
+
+
+
