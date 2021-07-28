@@ -1,0 +1,48 @@
+body{
+    background-color:black ;
+    color: aliceblue;
+    text-align: center;
+    
+   
+}
+header{
+    top:0;
+    height: 80px;
+}
+
+header, nav{
+    background-color: dimgray;
+    width:100%;
+    position: fixed;
+    left:0;
+    
+}
+nav{
+    top: 80px;
+}
+#main{
+    padding-top: 60px;
+}
+
+.nav li{ 
+display: inline-block;
+margin-right: 20px;
+margin-left: 20px;
+
+}
+.nav a{
+    color:orange;
+}
+
+.section_container section{
+    display: inline-block;
+    width: 150px;
+    border: 1px solid indianred;
+}
+.section_container h3{
+    font-style: italic;
+    text-decoration: underline;
+}
+footer, article{
+    margin-top: 80px;
+}
