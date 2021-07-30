@@ -12,6 +12,6 @@ let indexOfPortfolio = menu.indexOf('Portfólio');
 
 console.log(indexOfPortfolio);
 
-// Exercício 3  - Adicione o valor "Contato" no final do array menu :
+// Exercício 3  - Adicione o valor "Contato" no final do array menu
 menu.push('contato');
 console.log(menu);
