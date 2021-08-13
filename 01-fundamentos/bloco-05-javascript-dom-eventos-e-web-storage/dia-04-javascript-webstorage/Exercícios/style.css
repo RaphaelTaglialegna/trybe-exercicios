@@ -1,0 +1,17 @@
+.div-container{
+    border: solid black 2px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    margin: 1px;
+    padding: 1px;
+    text-align: center;
+}
+
+#blog-div, main{
+    width: 80%;
+    text-align: center;
+    text-align: justify;
+    margin-right: auto;
+    margin-left: auto;
+}
