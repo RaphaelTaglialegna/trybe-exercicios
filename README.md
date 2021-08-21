@@ -42,7 +42,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 5-3: _JavaScript - Eventos_
 - [x] 5-4: _JavaScript - Web Storage_
 - [ ] 5-5: _[Projeto - Meme Generator]()_
-- [x] 5-6: _[Projeto - Arte com Pixels](RaphaelTaglialegna.github.io/projects/projetct-pixels-art/index.html)_
+- [x] 5-6: _[Projeto - Arte com Pixels](https://raphaeltaglialegna.github.io/projects/projetct-pixels-art/index.html)_
 - [x] 5-7: _[Projeto - Lista de tarefas]()_
 - [ ] 5-7: _[Projeto - Adivinhe a Cor]()_
 - [ ] 5-7: _[Projeto - Carta Misteriosa]()_
