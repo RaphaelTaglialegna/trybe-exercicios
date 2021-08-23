@@ -42,7 +42,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 5-3: _JavaScript - Eventos_
 - [x] 5-4: _JavaScript - Web Storage_
 - [x] 5-5: _[Projeto - Arte com Pixels](https://raphaeltaglialegna.github.io/projects/projetct-pixels-art/index.html)_
-- [x] 5-6: _[Projeto - Lista de tarefas]()_
+- [x] 5-6: _[Projeto - Lista de tarefas](https://raphaeltaglialegna.github.io/projects/list-to- do-projet/index.html)_
 
 
 ##### Bloco 6: HTML & CSS avançado
