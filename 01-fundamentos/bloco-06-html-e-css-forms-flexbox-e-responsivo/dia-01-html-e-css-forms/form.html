@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Formulário 6.1</title>
+</head>
+<body>
+  <fieldset>
+    <label for="name">Nome:</label>
+    <input  id="name"type="text" maxlength="40" required>
+    
+    <label for="e-mail"> E-mail:</label>
+    <input  id="e-mail"type="email" maxlength="40" required>
+    
+    <label for="cpf">CPF:</label>
+    <input  id="cpf"type="number" maxlength="11" required>
+    <br><br>
+    <label for="city">Cidade:</label>
+    <input  id="city"type="text" maxlength="28" required>
+   
+    <label for="state">Estado</label>
+    <select name="estado" id="state">
+
+    </select>
+
+    <label for="house"><input  id="house"type="radio" name="casa" required>Casa</label>    
+    
+    <label for="apartment"> <input  id="apartment"type="radio" name="casa" required>Apartamento</label>    
+
+  </fieldset>
+  <fieldset>
+    <label for="resumo">Resumo do Curriculo</label> <br>
+    <textarea name="resume" id="resumo" cols="30" rows="6" maxlength="1000"></textarea>
+
+    <label for="job">Cargo:</label>
+    <input  id="job"type="text" maxlength="40" required>
+    
+    <label for="textJob"></label> <br>
+    <textarea name="resume" id="textJob" cols="30" rows="4" maxlength="500"></textarea>
+<br>
+    <label for="date">Data de Início:</label>
+    <input  id="date"type="text" required placeholder="dd/mm/aaaa" maxlength="10" value="" name="startDate">
+<button type="submit" id = "buttonForm"> Enviar Curriculo</button>
+<button type="button" id = "clear">Limpar Form</button>
+</fieldset>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
