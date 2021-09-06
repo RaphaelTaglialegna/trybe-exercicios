@@ -13,7 +13,7 @@ function insertPhraseInDOM() {
 
 function addPhraseToSessionStorage() {
   if (sessionStorage.getItem('phrases') === null) {
-    sessionStorage.setItem('phrases', JSON.stringify([]));
+    sessionStorage.setItem('phrases', JSON.stringify([listLength]));
   }
   const oldList = JSON.parse(sessionStorage.getItem('phrases'));
   const phraseText = input.value;
