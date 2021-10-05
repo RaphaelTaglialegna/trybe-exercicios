@@ -93,7 +93,7 @@ Inicia no Bloco 10 devido a mudanças do conteúdo.
 ##### Bloco 11: Componentes com Estado, Eventos e Formulários com React
 
 - [ ] 11-1: _Components com estado_
-- [ ] 11-2: _Eventos e formulÃ¡rios no React_
+- [ ] 11-2: _Eventos e formulários no React_
 - [ ] 11-3: _[Projeto - Movie Cards Library Stateful]()_
 
 ##### Bloco 12: Ciclo de Vida de Componentes e React Router
@@ -105,7 +105,7 @@ Inicia no Bloco 10 devido a mudanças do conteúdo.
 
 ##### Bloco 13:  Metodologias Ágeis
 
-- [ ] 13-1: _Metodologias Ãgeis_
+- [ ] 13-1: _Metodologias Ágeis_
 - [ ] 13-2: _[Projeto - Frontend Online Store]()_
 
 ##### Bloco 14: Testes automatizados com React Testing Library
@@ -120,7 +120,7 @@ Inicia no Bloco 10 devido a mudanças do conteúdo.
 - [ ] 15-2: _React com Redux - Parte 1_
 - [ ] 15-3: _React com Redux - PrÃ¡tica_
 - [ ] 15-4: _React com Redux - Parte 2_
-- [ ] 15-5: _Testes sÃ­ncronos com React-Redux_
+- [ ] 15-5: _Testes Asíncronos com React-Redux_
 - [ ] 15-6: _[Projeto - Tabela com filtros de dados]()_
 
 ##### Bloco 16: Projeto React
@@ -144,7 +144,7 @@ Inicia no Bloco 10 devido a mudanças do conteúdo.
 
 - [ ] 19-1: _Banco de dados SQL_
 - [ ] 19-2: _Encontrando dados em um banco de dados_
-- [ ] 19-3: _Filtrando dados de forma especÃ­fica_
+- [ ] 19-3: _Filtrando dados de forma específica_
 - [ ] 19-4: _Manipulando tabelas_
 - [ ] 19-5: _[Projeto - All For One]()_
 
