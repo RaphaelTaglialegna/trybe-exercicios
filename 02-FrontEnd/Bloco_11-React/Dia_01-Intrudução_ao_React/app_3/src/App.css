@@ -1,3 +1,2 @@
-body{
-  margin: 3%;
-}
+@import 'bulma/css/bulma.css';
+

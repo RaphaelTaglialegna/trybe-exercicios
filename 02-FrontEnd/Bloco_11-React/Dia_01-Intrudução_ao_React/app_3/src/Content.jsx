@@ -26,13 +26,21 @@ const conteudos = [
 class Content extends React.Component {
   render () {
      return(
-  <div className='content'>
+  <div className='columns'>
     {conteudos.map((elem) => (
-      <div key={elem.conteudo}className='card'>
-        <h4>O conteudo é: {elem.conteudo}</h4>
-        <p>status: {elem.status}</p>
-        <p>bloco: {elem.bloco}</p>
+    <div key={elem.conteudo} className='column'>      
+      <div class="tile is-parent">
+        <div class="tile">
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification is-warning">
+              <p class="title is-size-5">O conteudo é: {elem.conteudo}</p>
+              <p class="subtitle">Status: {elem.status}</p>
+              <p class="subtitle">bloco: {elem.bloco}</p>
+            </article>
+          </div> 
+        </div>
       </div>
+    </div>
     ))}
   </div>
      );

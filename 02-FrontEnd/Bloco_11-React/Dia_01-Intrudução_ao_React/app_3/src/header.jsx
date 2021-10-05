@@ -4,7 +4,11 @@ class Header extends React.Component {
 
   render(){
     return (
-      <h1>Conteúdos do Front End</h1>
+      <section class="hero is-link">
+        <div class="hero-body has-text-centered">
+          <p class="title">Conteúdos do Front End</p>
+        </div>
+      </section>
     )    
   }
 }
