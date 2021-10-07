@@ -1,13 +1,25 @@
 import React from "react";
 
-function handleClick() {
-  console.log('Button Three');
-}
-
 class ButtonThree extends React.Component {
+  constructor() {
+    super()
+    this.handleClick = this.handleClick.bind(this)    
+    this.state = {
+      numberClicks: 0
+    } 
+  }
+  handleClick() {
+    this.setState((lastState, _props) => ({
+      numberClicks: lastState.numberClicks + 1
+    })) 
+  }
+
   render() {
     return(
-      <button onClick={ handleClick }>Button Three</button> 
+      <>
+        <button onClick={ this.handleClick }>Button Three</button> 
+        <p>Button Three: {this.state.numberClicks}</p>
+      </>
     );
   }
 }
