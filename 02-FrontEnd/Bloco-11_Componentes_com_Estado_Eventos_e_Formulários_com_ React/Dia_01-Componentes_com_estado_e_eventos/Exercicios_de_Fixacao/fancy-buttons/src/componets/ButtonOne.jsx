@@ -12,13 +12,19 @@ class ButtonOne extends React.Component {
   handleClick() {
     this.setState((lastState, _props) => ({
       numberClicks: lastState.numberClicks + 1
-    })) 
+      
+    }))    
   }
+
+  classPar(num) {
+    return num % 2 === 0 ? 'green' : 'white';
+       
+    }    
 
   render() {
     return(
       <>
-        <button onClick={ this.handleClick }>Button One</button>
+        <button  onClick={ this.handleClick } style={{ background: this.classPar(this.state.numberClicks) }}>Button One</button>
         <p>Button One: {this.state.numberClicks}</p>
       </>
 
