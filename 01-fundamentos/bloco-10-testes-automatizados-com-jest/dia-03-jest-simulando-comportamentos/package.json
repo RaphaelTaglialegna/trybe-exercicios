@@ -1,0 +1,15 @@
+{
+  "name": "dia-03-jest-simulando-comportamentos",
+  "version": "1.0.0",
+  "description": "1. Crie uma função que gere um número aleatório entre 0 e 100. Você irá criar também os testes para essa função. Utilizando o mock, defina o retorno padrão como 10. Teste se a função foi chamada, qual seu retorno e quantas vezes foi chamada.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.2.1"
+  }
+}
+
