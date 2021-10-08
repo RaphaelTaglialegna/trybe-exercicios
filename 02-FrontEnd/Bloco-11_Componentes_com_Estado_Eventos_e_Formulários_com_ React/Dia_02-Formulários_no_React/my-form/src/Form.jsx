@@ -1,4 +1,5 @@
 import React from "react";
+import SelectFuits from "./componets/SelectFruits";
 
 class Form extends React.Component {
   constructor() {
@@ -53,15 +54,7 @@ class Form extends React.Component {
           </label>
         </fieldset>
         <fieldset>
-          <label>
-          Favorite Fruit: 
-            <select name='myFruits' valeu={this.state.myFruits} onChange={this.handleChange}>
-              <option value="grapefruit">Grapefruit</option>
-              <option value="lime">Lime</option>
-              <option value="coconut">Coconut</option>
-              <option value="mango">Mango</option>
-            </select>
-          </label>        
+           <SelectFuits value={this.state.myFruits} handleChange={this.handleChange} />
         </fieldset>
         <fieldset>
           <textarea name="Myideas" value={this.state.Myideas} onChange={this.handleChange}/>
