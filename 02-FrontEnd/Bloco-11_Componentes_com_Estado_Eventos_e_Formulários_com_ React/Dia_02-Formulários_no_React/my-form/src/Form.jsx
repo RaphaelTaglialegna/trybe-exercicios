@@ -1,4 +1,5 @@
 import React from "react";
+import Myname from "./componets/Myname";
 import SelectFuits from "./componets/SelectFruits";
 
 class Form extends React.Component {
@@ -36,18 +37,13 @@ class Form extends React.Component {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
-    this.setState({
-      [name]: value,
-        });
+    this.setState({[name]: value });
   }
   render() {
     return (
       <form>
         <fieldset>
-        <label>
-            Name:
-            <input type="text" name="myName" value={this.state.myName} onChange={this.handleChange}/>
-          </label>
+          <Myname value={this.state.myName}  handleChange={this.handleChange}/>
           <label>
              Last Name:
             <input type="text" name="myLastName" value={this.state.myLastName} onChange={this.handleChange} />
