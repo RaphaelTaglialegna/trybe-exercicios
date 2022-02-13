@@ -1,13 +1,22 @@
 /* index.js */
+const recipesValidation = require('./middlewares/recipesValidation');
 const express = require('express');
 const cors = require('cors');
+const authMiddleware = require('./middlewares/auth-middleware');
+
 const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.json());
 
+app.get('/open', function (_req, res) {
+  res.send('open!')
+});
 
-app.use((req, res, next) => {
+app.use(authMiddleware);
+
+
+app.use((_req, res, next) => {
   //Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "*" indicando que qualquer site pode fazer a conexão
   res.header("Access-Control-Allow-Origin", "*");
 	//Quais são os métodos que a conexão pode realizar na API
@@ -32,12 +41,16 @@ const drinks = [
 ];
 const sortedDrinks = drinks.sort((a,b) => a.name.localeCompare(b.name));
 
-app.post('/recipes', function (req, res) {
+
+// Função de add uma receita.
+app.post('/recipes', recipesValidation,  function (req, res) {
   const { id, name, price } = req.body;
   recipes.push({ id, name, price});
   res.status(201).json({ message: 'Recipe created successfully!'});
 });
 
+
+// Funções de para buscar as resceitas. 
 app.get('/drinks', function (req, res) {
   res.json(sortedDrinks);
 });
@@ -46,14 +59,14 @@ app.get('/recipes', function (req, res) {
   res.json(recipes);
 });
 
-// app.get('/recipes/:id', function (req, res) {
-//   const { id } = req.params;
-//   const recipe = recipes.find((r) => r.id === parseInt(id));
+app.get('/recipes/:id', function (req, res) {
+  const { id } = req.params;
+  const recipe = recipes.find((r) => r.id === parseInt(id));
 
-//   if (!recipe) return res.status(404).json({ message: 'Recipe not found!'});
+  if (!recipe) return res.status(404).json({ message: 'Recipe not found!'});
 
-//   res.status(200).json(recipe);
-// });
+  res.status(200).json(recipe);
+});
 
 app.get('/drinks/:id', function (req, res) {
   const { id } = req.params;
@@ -70,12 +83,14 @@ app.get('/recipes/search', function (req, res) {
   res.status(200).json(filteredRecipes);
 });
 
+// função para fazer uma mudança na receita.
 app.put('/recipes/:id', function (req, res) {
   const { id } = req.params;
   const { name, price } = req.body;
   const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
 
-  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found!' });
+  if (recipeIndex === -1) 
+    return res.status(404).json({ message: 'Recipe not found!' });
 
   recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
 
@@ -93,9 +108,9 @@ app.delete('/recipes/:id', function (req, res) {
   res.status(204).end();
 });
 
-app.all('*', function (req, res) {
-  return res.status(404).json({ message: `Rota '${req.path}' não existe!`});
-});
+// app.all('*', function (req, res) {
+//   return res.status(404).json({ message: `Rota '${req.path}' não existe!`});
+// });
 
 
 app.listen(3001, () => {
