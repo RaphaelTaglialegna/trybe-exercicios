@@ -1,4 +1,7 @@
 function checkNumber(num) {
+  if (!Number.isInteger(num) === true) {
+    return 'o valor deve ser um número';
+  };  
   if (num > 0) {
     return 'positivo';
   };

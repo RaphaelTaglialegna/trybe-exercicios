@@ -9,7 +9,7 @@ describe('Exercício 1: checa a função se o numero passado é "positivo", "neg
       expect(answer).to.be.a('string');
     });
 
-    it('1 - Retorna "positivo"', () => { 
+    it('Retorna "positivo"', () => { 
       const answer = checkNumber(5); 
       expect(answer).to.be.equals('positivo');
     });
@@ -21,7 +21,7 @@ describe('Exercício 1: checa a função se o numero passado é "positivo", "neg
       const answer = checkNumber(-5); 
       expect(answer).to.be.a('string');
     });
-    it('2 - Retorna "negativo".', () => { 
+    it('Retorna "negativo".', () => { 
       const answer = checkNumber(-5); 
       expect(answer).to.be.equals('negativo');
     });
@@ -33,9 +33,20 @@ describe('Exercício 1: checa a função se o numero passado é "positivo", "neg
       const answer = checkNumber(0); 
       expect(answer).to.be.a('string');
     });
-    it('3 - Retorna "neutro".', () => { 
+    it('Retorna "neutro".', () => { 
       const answer = checkNumber(0); 
       expect(answer).to.be.equals('neutro');
+    });
+  });
+
+  describe('4 - Retorna "o valor deve ser um número" caso o parâmetro passado não seja um numero.', () => { 
+        it('Retorna uma string.', () => { 
+          const answer = checkNumber('0'); 
+          expect(answer).to.be.a('string');
+        });
+        it('Retorna "o valor deve ser um número".', () => { 
+      const answer = checkNumber('0'); 
+      expect(answer).to.be.equals('o valor deve ser um número');
     });
   });
 });
