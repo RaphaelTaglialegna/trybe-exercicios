@@ -16,7 +16,7 @@ const isValidEmail = (req, res, next) => {
   const { email } = req.body;
   const validadtion = validator.is_email_valid(email)
       if (!validadtion) 
-      return res.status(400).json({ message: 'invalid data'})
+      return res.status(400).json({ "message": "email or password is incorrect" });
       
       next();
 }; 
@@ -29,10 +29,21 @@ const isValidPassWord = (req, res, next) => {
   if(password.length < 3 || 
      password.length > 8 ||
      !password.match(passwordRegex) 
-     ) return res.status(400).json({ message: 'invalid data'})
+     ) return res.status(400).json({ "message": "email or password is incorrect" });
     
   next();
 
 };
 
-module.exports = { isValidUsername, isValidEmail, isValidPassWord };
+// Atividade  2 - Validação por Token
+const isValidToken = (req, res, next) => { 
+  const token = req.headers.authorization;
+  const tokenRegex = /^[a-zA-Z0-9]{12}$/;
+ 
+  if(!token || tokenRegex.test(token)) 
+    return res.status(401).json({ message: 'invalid token' });  
+
+  next();
+}
+
+module.exports = { isValidUsername, isValidEmail, isValidPassWord, isValidToken };

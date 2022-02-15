@@ -11,6 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/user', userRouter);
+app.use('/btc', userRouter);
 
 app.listen(PORT, function () {
   console.log(`Example app listening on port ${PORT}!`);
