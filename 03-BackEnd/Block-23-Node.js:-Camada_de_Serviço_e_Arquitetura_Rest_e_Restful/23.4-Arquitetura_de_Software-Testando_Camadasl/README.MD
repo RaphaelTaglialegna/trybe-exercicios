@@ -1,77 +1,32 @@
-### Atividade 1
-1- Crie uma rota POST /user/register que receba uma requisição que envie username , email e password no body da requisição, onde:
-1. username deve ter mais de 3 caracteres;
+#### Proposta e requisitos
+Nos exercícios iremos implementar todas as camadas, para adicionar um endpoint que recebe o ID de um filme específico e, então, retorna os detalhes desse filme.
 
-2. email deve ter o formato email@mail.com;
+Esse endpoint terá os seguintes cenários:
 
-3. password deve conter no mínimo 4 caracteres e no máximo 8 (todos números);
+* Quando é encontrado um filme com o ID passado pela pessoa usuária deverá retornar um objeto com todas as propriedades do filme e o código http 200 - OK no status da response .
 
-4. Para todos os casos não atendidos acima deve ser retornado o código de status e um JSON com uma mensagem de erro, ex: status 400 e { "message": "invalid data" } ;
+* Quando não é encontrado nenhum filme com o ID passado pela pessoa usuária deverá responder com código http 404 - Not Found no status da response e com a mensagem "Filme não encontrado."
+#### Exercício 1 : Seguindo o TDD , implemente a camada de model necessária para o end-point, aplicando os comportamentos para atender aos requisitos:
 
-5. Caso tenha sucesso deve ser retornado uma resposta com o código de status e um JSON com uma mensagem de sucesso, ex: status 201 e { "message": "user created" } ;
+* Crie os testes da camada de model . Como essa camada é responsável por realizar as operações no BD, adicione as operações necessárias para que o endpoint funcione conforme esperado.
 
-2- Crie uma rota POST /user/login que receba uma requisição que envie email / password no body da requisição e devolva um token como resposta, onde:
-1. O formato desse token retornado deve ser uma string aleatória com 12 caracteres;
+* Implemente os métodos para atender aos cenários descritos nos testes.
+Faça os ajustes necessários nos testes de acordo com sua implementação. Lembre-se de isolar qualquer operação de leitura e escrita.
 
-2. O email recebido deve ter o formato email@mail.com;
+#### Exercício 2 : Também seguindo o TDD, implemente a camada de service do endpoint, certifique-se de garantir que os cenários descritos nos requisitos serão atendidos.
 
-3. O password deve conter no mínimo 4 caracteres e no máximo 8, todos números;
+ * Crie os testes da camada de service . Lembre-se que essa camada é responsável pelas regras de negócio, e deverá fazer os tratamentos necessários com o input recebido do controller e com o output recebido do model .
 
-4. Para todos os casos não atendidos acima deve ser retornado o código de status e um JSON com uma mensagem de erro, ex: status 400 e { "message": "email or password is incorrect" }
+* Implemente os métodos necessários para atender aos testes.
 
-5. Caso tenha sucesso deve ser retornado uma resposta com o código de status e um JSON com uma mensagem de sucesso, ex: status 200 e { "token": "86567349784e" } ;
-#### Dicas: separe suas rotas em arquivos e utilize middlewares para validar os campos recebidos nas requisições
+* Faça os ajustes necessários nos testes de acordo com sua implementação. Lembre-se de isolar a camada das demais.
 
+#### Exercício 3 : Também seguindo o TDD , implemente a camada de controller do endpoint, certifique-se de garantir que os cenários descritos nos requisitos serão atendidos.
 
-### Atividade 2:
+* Crie os testes da camada de controller . Lembre-se que essa camada é responsável por toda a comunicação com a pessoa usuária, devendo tratar seu input e output. Outro ponto de atenção é que diferente das outras camadas, os controllers são middlewares e será necessário criar asserções com os stubs para testar seus comportamentos.
 
-3 - Crie uma rota GET /btc/price que receba uma requisição com um token na chave Authorization do headers da requisição e verifique se ele está correto, onde:
+* Implemente o código necessário para atender os cenários descritos nos testes.
 
-1. O token deve ser uma string de 12 caracteres contendo letras e/ou números.
+* Faça os ajustes necessários nos testes de acordo com sua implementação. Lembre-se de isolar a camada das demais.
 
-2. Para todos os casos não atendidos acima deve ser retornado o código de status e um JSON com uma mensagem de erro, ex: status 401 e { "message": "invalid token" } ;
-
-3. Caso tenha sucesso deve ser feito um fetch em uma API externa de sua preferência e retorne os dados da API como resposta;
-
-#### Dicas: - Sugestão de API ( https://api.coindesk.com/v1/bpi/currentprice/BTC.json); - O token será passado pelo header da seguinte forma: authorization: 86567349784e; - Utilize middlewares para validar o token; - Para fazer uma requisição a uma API externa utilizer o NODE-FETCH ou AXIOS, parecido com que vimos em Front-end;
-
-
-### Atividade 3:
-4 - Crie uma rota GET /posts/:id que receba uma requisição com um id como param route , verifique existência do post com aquele id, onde:
-
-1. O id deve existir;
-
-2. Para todos os casos não atendidos acima deve ser retornado o código de status e um JSON com uma mensagem de erro, ex: status 404 e { "message": "post not found" } ;
-
-3. Caso tenha sucesso deve ser retornado uma resposta com o código de status e um JSON com as informações do respectivo post;
-
-5 - Crie uma rota GET /posts que deve trazer todos os posts cadastrados, onde:
-
-1. Se não existir posts cadastrados retorne um array vazio e um status code, ex: status 200 e { "posts": [] } ;
-2. Se existir posts cadastrados retorne um array com os posts e um status code;
-
-6 - Faça um middleware de erro. Caso tenha sido requisitada uma rota inexistente deve ser retornado o código de status e um JSON , ex: status 404 e { "message": "Opsss, route not found!" }
-#### Dicas: separe suas rotas em arquivos e utilize middleware de erro para capturar uma rota inexistente.
-
-### Atividade 4:
-7 - Crie uma rota POST /teams que receba uma requisição que envie name , initials , country e league no body da requisção, onde:
-
-1. name deve ter mais de 5 caracteres;
-
-2. initials deve conter no máximo 3 caracteres em caixa alta;
-
-3. country deve ter mais de 3 caracteres;
-
-4. league este campo é opcional;
-
-5. Para todos os casos não atendidos acima deve ser retornado o código de status e um JSON com uma mensagem de erro, ex: status 400 e { "message": "invalid data" } ;
-
-6. Caso tenha sucesso deve ser gravado em um arquivo o dado recebido e retornado uma resposta com o código de status e um JSON com as informações do time criado;
-
-8 - Na rota GET /teams deve trazer todos os times cadastrados, onde:
-
-1. Se não existir times cadastrados retorne um array vazio e um status code, ex: status 200 e { "teams": [] } ;
-
-2. Se existir times cadastrados retorne um array com os times e um status code;
-
-#### Dicas: separe suas rotas em arquivos e para gravar/ler dados do arquivo, utilize o módulo FS do Node.js (Não esqueça de criar o arquivo teams.json na raiz do projeto)
+#### Exercício 4 : Faça os ajustes no index.js para finalizar o endpoint.
