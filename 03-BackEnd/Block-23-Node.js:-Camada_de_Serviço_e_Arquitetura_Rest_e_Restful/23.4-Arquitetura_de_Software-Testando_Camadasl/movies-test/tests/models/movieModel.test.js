@@ -9,7 +9,7 @@ const { expect } = require('chai');
 const conection = require('../../models/connections');
 const MoviesModel = require('../../models/movieModel');
 
-describe('Insere um novo filme no BD', () => {
+describe('Test Model - Insere um novo filme no BD', () => {
   const payloadMovie = {
     title: 'Example Movie',
     directedBy: 'Jane Dow',
@@ -26,7 +26,7 @@ after(async () => {
 
 
   describe('quando é inserido com sucesso', () => {
-
+    
     it('retorna um objeto', async () => {
       const response = await MoviesModel.create(payloadMovie);
 
@@ -40,4 +40,63 @@ after(async () => {
     });
 
   });
+});
+
+describe('Test Model - Busca o filme pelo ID existente', () => {
+    const dataBase= [{ 
+        id: 3, 
+        title: 'Example Movie',
+        directed_by: 'Jane Dow',
+        release_year: 1999,
+    }];
+
+    const ID = 3;
+
+    before(async (id = ID) => { 
+      
+      sinon.stub(MoviesModel, 'findById').resolves( dataBase.find((obj) => obj.id === id))
+    }); 
+    // Restauramos a função 'execute' original após os testes.
+  after(async () => { 
+    MoviesModel.findById.restore()
+  });
+  
+    it('retorna um objeto com um id existente', async() => { 
+      const response = await MoviesModel.findById(ID)
+
+      expect(response).to.be.an('object');
+    });
+    it('objeto não esta vazio o com um id existente', async() => { 
+      const response = await MoviesModel.findById(ID)
+
+      expect(response).to.be.an('object');
+      expect(response).to.be.not.empty;
+    });
+
+    it('retorna os parâmetros do objeto com um id existente', async() => { 
+      const response = await MoviesModel.findById(ID)
+
+      expect(response).to.include.all.keys('id', 'title', 'directed_by', 'release_year');
+      
+    });
+
+});
+
+describe('Test Model -  Busca o filme pelo ID inexistente', () => {
+ 
+  before(async () => { 
+    const execute = [[]];
+    sinon.stub(conection, 'execute').resolves(execute);
+  }); 
+  // Restauramos a função 'execute' original após os testes.
+after(async () => { 
+ conection.execute.restore()
+});
+
+  it('retorna null', async() => { 
+    const response = await MoviesModel.findById()
+
+    expect(response).to.be.equal(null);
+  });
+
 });

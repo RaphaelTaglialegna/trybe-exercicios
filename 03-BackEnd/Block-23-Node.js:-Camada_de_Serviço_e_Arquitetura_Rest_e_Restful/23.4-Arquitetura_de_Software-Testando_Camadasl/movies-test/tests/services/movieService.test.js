@@ -1,5 +1,6 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
+const connection = require('../../models/connections');
 
 const MoviesModel = require('../../models/movieModel');
 const MoviesService = require('../../services/movieService');
@@ -9,7 +10,7 @@ const MoviesService = require('../../services/movieService');
   necessários para a operação. Como trata-se de uma regra
   de negócio, validaremos na camada de serviços.
 */
-describe('Insere um novo filme no BD', () => {
+describe('Test Services - Insere um novo filme no BD', () => {
   describe('quando o payload informado não é válido', () => {
     const payloadMovie = {};
 
@@ -27,7 +28,7 @@ describe('Insere um novo filme no BD', () => {
 
   });
 
-  describe('quando é inserido com sucesso', () => {
+  describe(' Test Services - quando é inserido com sucesso', () => {
     const payloadMovie = {
       title: 'Example Movie',
       directedBy: 'Jane Dow',
@@ -59,4 +60,64 @@ describe('Insere um novo filme no BD', () => {
     });
 
   });
+});
+
+
+describe('Test Services -  Busca o filme pelo ID existente', () => {
+  const dataBase= [{ 
+      id: 3, 
+      title: 'Example Movie',
+      directed_by: 'Jane Dow',
+      release_year: 1999,
+  }];
+
+  const ID = 3;
+
+  before(async (id = ID) => { 
+    
+    sinon.stub(MoviesModel, 'findById').resolves( dataBase.find((obj) => obj.id === id))
+  }); 
+  // Restauramos a função 'execute' original após os testes.
+after(async () => { 
+  MoviesModel.findById.restore()
+});
+
+  it('retorna um objeto com um id existente', async() => { 
+    const response = await MoviesService.findById(ID)
+
+    expect(response).to.be.an('object');
+  });
+  it('objeto não esta vazio o com um id existente', async() => { 
+    const response = await MoviesService.findById(ID)
+
+    expect(response).to.be.an('object');
+    expect(response).to.be.not.empty;
+  });
+
+  it('retorna os parâmetros do objeto com um id existente', async() => { 
+    const response = await MoviesService.findById(ID)
+
+    expect(response).to.include.all.keys('id', 'title', 'directed_by', 'release_year');
+    
+  });
+
+});
+
+describe('Test Services -  Busca o filme pelo ID inexistente', () => {
+
+before(async () => { 
+  const execute = [[]];
+  sinon.stub(connection, 'execute').resolves(execute);
+}); 
+// Restauramos a função 'execute' original após os testes.
+after(async () => { 
+connection.execute.restore()
+});
+
+it('retorna null', async() => { 
+  const response = await MoviesService.findById()
+
+  expect(response).to.be.equal(null);
+});
+
 });
