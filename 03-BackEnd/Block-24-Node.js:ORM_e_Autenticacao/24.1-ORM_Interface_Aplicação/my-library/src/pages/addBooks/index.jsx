@@ -18,8 +18,8 @@ async function addBook (book) {
   
   function CreateBook() {
     const [book, setBook] = useState({
-      title:'',
-      author: '',
+      title:null,
+      author:null,
       pageQuantity: 0,
     })
     let navigate = useNavigate();
