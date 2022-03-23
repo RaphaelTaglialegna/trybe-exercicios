@@ -1,6 +1,5 @@
 "use strict";
 const units = ["km", "hm", "dam", "m", "dm", "cm", "mm"];
-
 function makeError(unity) {
     throw new Error(`A unidade ${unity} não é uma unidade válida.`);
 }
@@ -15,5 +14,5 @@ function convert(value, forUnity, toUnity) {
     return value * Math.pow(10, exponent);
 }
 console.log(convert(100, 'km', 'm'));
-console.log(convert(100, '3', 'm')); 
+console.log(convert(100, '3', 'm'));
 console.log(convert(100, 'km', '2'));
