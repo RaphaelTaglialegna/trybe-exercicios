@@ -17,6 +17,6 @@ function convertMass(value: number, forUnity: string, toUnity: string): number {
 }
 
 console.log(convertMass(1, 'kg', 'g'))
-console.log(convertMass(1000, 'g', 'Kg'))
+console.log(convertMass(1000, 'g', 'kg'))
 console.log(convertMass(100, '3', 'm'))
-console.log(convertMass(100, 'km', '2'))
+console.log(convertMass(100, 'g', '2'))

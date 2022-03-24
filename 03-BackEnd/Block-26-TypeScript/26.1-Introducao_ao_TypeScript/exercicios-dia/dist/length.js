@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const units = ["km", "hm", "dam", "m", "dm", "cm", "mm"];
 function makeError(unity) {
     throw new Error(`A unidade ${unity} não é uma unidade válida.`);

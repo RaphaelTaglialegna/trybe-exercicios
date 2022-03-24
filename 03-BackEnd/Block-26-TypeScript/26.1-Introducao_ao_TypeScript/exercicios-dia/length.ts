@@ -1,3 +1,5 @@
+import readline from 'readline-sync'
+
 const units = ["km", "hm", "dam", "m", "dm", "cm", "mm"];
 
 function makeError(unity: string) {
