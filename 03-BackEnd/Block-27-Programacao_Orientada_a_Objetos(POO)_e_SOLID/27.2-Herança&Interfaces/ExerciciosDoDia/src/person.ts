@@ -1,4 +1,4 @@
-class Person {
+export default class Person {
   // `Attributes`:
   // - name: nome da pessoa
   private name: string;
@@ -60,21 +60,20 @@ class Person {
     return name;
   }
 }
-export default Person;
 
-// let birthday = new Date(1995, 11, 17)
-const p1 = new Person('José João', new Date(1995, 11, 17));
+// // let birthday = new Date(1995, 11, 17)
+// const p1 = new Person('José João', new Date(1995, 11, 17));
 
-console.log(p1);
-console.log(p1.personName);
-console.log(p1.personBirthDate);
+// console.log(p1);
+// console.log(p1.personName);
+// console.log(p1.personBirthDate);
 
-const p2 = new Person('Jo', new Date(1923, 11, 17));
+// const p2 = new Person('Jo', new Date(1923, 11, 17));
 
-console.log(p2);
-console.log(p2.personName);
-console.log(p2.personBirthDate);
-console.log(p2.calculaIdade(p2.personBirthDate, new Date()));
+// console.log(p2);
+// console.log(p2.personName);
+// console.log(p2.personBirthDate);
+// console.log(p2.calculaIdade(p2.personBirthDate, new Date()));
 
 // Código do exercício anterior, o codigo acima estamos refatorando usando Interface e herança.
 // class PessoaEstudante { 
