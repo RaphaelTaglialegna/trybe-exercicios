@@ -1,0 +1,22 @@
+{
+  "name": "exerciciosdodia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "school.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.5.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
