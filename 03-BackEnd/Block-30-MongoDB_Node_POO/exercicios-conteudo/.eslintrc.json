@@ -38,11 +38,9 @@
       "no-console": "off",
       "camelcase": "warn",
       "arrow-parens": [
-  ,
         "always"
       ],
       "quotes": [
-  ,
         "single"
       ],
       "implicit-arrow-linebreak": "off",
